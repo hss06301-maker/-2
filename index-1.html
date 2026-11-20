@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="عالم الطيور - متجر قاسم حسن للطيور والعصافير">
+<title>عالم الطيور | قاسم حسن</title>
+<style>
+:root{--green:#174d35;--green2:#218653;--cream:#f5f8f2;--gold:#e5b95c;--ink:#203329}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font-family:Tahoma,Arial,sans-serif;background:var(--cream);color:var(--ink)}
+header{background:linear-gradient(120deg,#103b29,#24784d);color:white;padding:18px 6%;display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap}
+.logo{font-size:25px;font-weight:bold}.logo span{color:var(--gold)}
+nav{display:flex;gap:20px;flex-wrap:wrap}nav a{color:white;text-decoration:none;font-size:14px}
+.hero{padding:72px 7%;background:linear-gradient(90deg,rgba(12,48,31,.88),rgba(12,48,31,.35)),url('https://images.unsplash.com/photo-1552728089-57bdde30beb3?w=1600') center/cover;color:white;min-height:360px;display:flex;align-items:center}
+.hero div{max-width:620px}.hero h1{font-size:clamp(32px,5vw,54px);margin:0 0 15px}.hero p{line-height:2;font-size:17px}.btn{display:inline-block;border:0;border-radius:9px;background:var(--gold);color:#243326;padding:12px 22px;text-decoration:none;font-weight:bold;cursor:pointer}
+section{padding:55px 7%}.section-title{text-align:center;color:var(--green);font-size:30px;margin:0 0 12px}.sub{text-align:center;color:#64756a;margin:0 0 30px}
+.products{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:22px;max-width:1150px;margin:auto}
+.card{background:white;border-radius:16px;overflow:hidden;box-shadow:0 8px 25px #173b2810;transition:.2s}.card:hover{transform:translateY(-4px)}.card img{width:100%;height:205px;object-fit:cover;display:block}.card-body{padding:18px}.card h3{margin:0 0 9px;color:var(--green)}.card p{color:#68766d;line-height:1.7;font-size:14px}.price{font-weight:bold;color:var(--green2);font-size:19px;margin:12px 0}.buy{background:var(--green2);color:white;width:100%;padding:11px;border:0;border-radius:8px;font-size:15px;cursor:pointer}
+.about{background:#e8f0e6;text-align:center;line-height:2}.about p{max-width:720px;margin:12px auto}.contact{text-align:center}.contact-box{background:white;max-width:600px;margin:25px auto 0;padding:25px;border-radius:15px;box-shadow:0 8px 25px #173b2810;line-height:2}
+footer{background:#103b29;color:white;text-align:center;padding:23px}
+.modal{display:none;position:fixed;inset:0;background:#0009;z-index:5;align-items:center;justify-content:center;padding:18px}.modal.show{display:flex}.modal-content{background:white;border-radius:16px;padding:25px;max-width:420px;width:100%;text-align:center}.modal-content h3{color:var(--green);font-size:24px}.modal-content p{line-height:1.9}.close{background:#e8eee9;color:#26382d;margin-top:10px}
+.note{font-size:12px;color:#728077;margin-top:14px}
+@media(max-width:600px){header{justify-content:center;text-align:center}.hero{min-height:330px;padding:48px 6%}section{padding:42px 5%}nav{justify-content:center}}
+</style>
+</head>
+<body>
+<header>
+  <div class="logo">عالم <span>الطيور</span></div>
+  <nav><a href="#home">الرئيسية</a><a href="#birds">الطيور</a><a href="#about">من نحن</a><a href="#contact">تواصل معنا</a></nav>
+</header>
+
+<main>
+<section class="hero" id="home">
+ <div>
+  <h1>مرحباً بك في عالم الطيور</h1>
+  <p>اكتشف مجموعة مختارة من الطيور والعصافير الجميلة. تصفح الأنواع، تعرّف على التفاصيل، وتواصل معنا للاستفسار عن التوفر والطلب.</p>
+  <a class="btn" href="#birds">تصفح الطيور</a>
+ </div>
+</section>
+
+<section id="birds">
+ <h2 class="section-title">طيور المتجر</h2>
+ <p class="sub">الأسعار والصور المعروضة تجريبية ويمكن تعديلها قبل نشر المتجر.</p>
+ <div class="products">
+  <article class="card">
+   <img src="https://images.unsplash.com/photo-1552728089-57bdde30beb3?w=700" alt="ببغاء ملون">
+   <div class="card-body"><h3>ببغاء ملون</h3><p>طائر اجتماعي بألوان جذابة. اسأل عن النوع والعمر والتوفر.</p><div class="price">250 ريال</div><button class="buy" onclick="showDetails('ببغاء ملون','250 ريال','طائر اجتماعي بألوان جذابة. السعر تجريبي ويجب تأكيد التوفر والتفاصيل قبل الطلب.')">عرض التفاصيل والشراء</button></div>
+  </article>
+  <article class="card">
+   <img src="https://images.unsplash.com/photo-1555169062-013468b47731?w=700" alt="عصفور صغير">
+   <div class="card-body"><h3>عصفور زينة</h3><p>عصفور صغير مناسب لمحبي الطيور المنزلية.</p><div class="price">80 ريال</div><button class="buy" onclick="showDetails('عصفور زينة','80 ريال','عصفور صغير لمحبي الطيور المنزلية. السعر تجريبي ويجب تأكيد التوفر والتفاصيل قبل الطلب.')">عرض التفاصيل والشراء</button></div>
+  </article>
+  <article class="card">
+   <img src="https://images.unsplash.com/photo-1549608276-5786777e6587?w=700" alt="طائر كناري">
+   <div class="card-body"><h3>كناري</h3><p>طائر معروف بتغريده وألوانه الجميلة.</p><div class="price">150 ريال</div><button class="buy" onclick="showDetails('كناري','150 ريال','طائر معروف بتغريده وألوانه الجميلة. السعر تجريبي ويجب تأكيد التوفر والتفاصيل قبل الطلب.')">عرض التفاصيل والشراء</button></div>
+  </article>
+  <article class="card">
+   <img src="https://images.unsplash.com/photo-1444464666168-49d633b86797?w=700" alt="طائر زينة">
+   <div class="card-body"><h3>طائر زينة</h3><p>مجموعة ألوان جميلة لمحبي تربية الطيور.</p><div class="price">120 ريال</div><button class="buy" onclick="showDetails('طائر زينة','120 ريال','طائر زينة بألوان جميلة. السعر تجريبي ويجب تأكيد النوع والتوفر قبل الطلب.')">عرض التفاصيل والشراء</button></div>
+  </article>
+ </div>
+</section>
+
+<section class="about" id="about">
+ <h2 class="section-title">من نحن</h2>
+ <p>أنا قاسم حسن، صاحب متجر عالم الطيور. أنشأت هذا الموقع لعرض الطيور ومساعدة الزوار على معرفة الأنواع والأسعار والتواصل للاستفسار عن الطلبات.</p>
+</section>
+
+<section class="contact" id="contact">
+ <h2 class="section-title">تواصل معنا</h2>
+ <p class="sub">يسعدنا استقبال استفساراتكم عن الطيور والتوفر.</p>
+ <div class="contact-box"><strong>صاحب المتجر: قاسم حسن</strong><br>رقم التواصل: <span id="phoneText">000500 (رقم تجريبي)</span><p class="note">استبدل الرقم التجريبي برقمك الصحيح قبل نشر الموقع.</p></div>
+</section>
+</main>
+
+<footer>© 2026 عالم الطيور | قاسم حسن</footer>
+
+<div class="modal" id="detailsModal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+ <div class="modal-content">
+  <h3 id="modalTitle"></h3><p id="modalPrice"></p><p id="modalDescription"></p>
+  <p>لإتمام الطلب، تواصل مع صاحب المتجر بعد التأكد من توفر الطائر.</p>
+  <button class="buy" onclick="contactStore()">التواصل للاستفسار</button>
+  <button class="btn close" onclick="closeDetails()">إغلاق</button>
+ </div>
+</div>
+
+<script>
+const CONTACT_NUMBER = "000500"; // استبدل هذا الرقم برقمك الصحيح قبل النشر
+function showDetails(name, price, description) {
+ document.getElementById('modalTitle').textContent = name;
+ document.getElementById('modalPrice').textContent = 'السعر: ' + price;
+ document.getElementById('modalDescription').textContent = description;
+ document.getElementById('detailsModal').classList.add('show');
+}
+function closeDetails(){document.getElementById('detailsModal').classList.remove('show');}
+function contactStore(){
+ if(CONTACT_NUMBER === "000500"){alert('هذا رقم تجريبي. عدّل CONTACT_NUMBER في الكود وضع رقم التواصل الصحيح قبل النشر.');return;}
+ window.location.href='https://wa.me/'+CONTACT_NUMBER.replace(/\D/g,'');
+}
+document.getElementById('detailsModal').addEventListener('click',function(e){if(e.target===this)closeDetails();});
+</script>
+</body>
+</html>
